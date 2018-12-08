@@ -121,9 +121,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.49497475"
-     inkscape:cx="1347.7021"
-     inkscape:cy="768.14807"
+     inkscape:zoom="0.175"
+     inkscape:cx="1263.0851"
+     inkscape:cy="832.12787"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -15693,7 +15693,7 @@ rkJggg==
        height="108.74375"
        width="141.81667"
        clip-path="url(#clipPath4270)"
-       transform="matrix(0.23017774,0,0,0.23017774,134.51811,-63.539434)" />
+       transform="matrix(0.23017774,0,0,0.23017774,-273.69618,-211.7061)" />
     <image
        y="89.320984"
        x="161.69823"
@@ -18350,7 +18350,8 @@ KKKAP//Z
        height="126.38866"
        width="61.311943"
        clip-path="url(#clipPath5028)"
-       transform="matrix(0.49559639,0,0,0.4873742,315.61913,64.243325)" />
+       transform="matrix(0.49559639,0,0,0.4873742,315.61913,64.243325)"
+       style="stroke:#ff0000" />
   </g>
   <g
      inkscape:groupmode="layer"
