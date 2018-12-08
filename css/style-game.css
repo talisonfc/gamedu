@@ -1,0 +1,83 @@
+
+#persona{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    text-align: center;
+}
+
+#persona img{
+    height: 40px;
+}
+
+.imgMirrorLeft{
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+.imgMirrorRight{
+    -moz-transform: scaleX(1);
+    -o-transform: scaleX(1);
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+.imgMirrorUp{
+    transform: rotate(-90deg);
+}
+
+.imgMirrorDown{
+    transform: rotate(90deg);
+}
+
+#grid{
+    min-height: 100%;
+    background: url('../assets/city-v2.png')
+}
+
+.rowGrid{
+    display: flex;
+}
+
+.itemGrid{
+    /* border: 1px solid red; */
+}
+
+button{
+    border: 0;
+}
+
+#controllers{
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+#controllers button{
+    font-size: 2em;
+    background: transparent;
+    border-radius: 2em;
+    margin: .5em;
+    color: red;
+}
+
+#btnUp{
+    
+}
+
+#btnDown{
+    
+}
+
+#btnLeft{
+    
+}
+
+#btnRight{
+    
+}

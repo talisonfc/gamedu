@@ -15,84 +15,21 @@ html, body{
     height: 100%;
 }
 
-#persona{
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    background: transparent;
-    text-align: center;
+.game-name{
+    font-weight: bold;
+    font-size: 1.5em;
+    padding: 16px;
 }
 
-#persona img{
-    height: 40px;
-}
-
-.imgMirrorLeft{
-    -moz-transform: scaleX(-1);
-    -o-transform: scaleX(-1);
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
-}
-
-.imgMirrorRight{
-    -moz-transform: scaleX(1);
-    -o-transform: scaleX(1);
-    -webkit-transform: scaleX(1);
-    transform: scaleX(1);
-}
-
-.imgMirrorUp{
-    transform: rotate(-90deg);
-}
-
-.imgMirrorDown{
-    transform: rotate(90deg);
-}
-
-#grid{
-    min-height: 100%;
-}
-
-.rowGrid{
-    display: flex;
-}
-
-.itemGrid{
-    /* border: 1px solid red; */
-}
-
-button{
-    border: 0;
-}
-
-#controllers{
-    position: absolute;
-    bottom: 20px;
+.logo{
+    margin-top: 50px;
     width: 100%;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.3);
 }
 
-#controllers button{
-    font-size: 2em;
-    background: transparent;
-    border-radius: 2em;
-    margin: .5em;
-    color: red;
-}
-
-#btnUp{
-    
-}
-
-#btnDown{
-    
-}
-
-#btnLeft{
-    
-}
-
-#btnRight{
-    
+.fala-persona{
+    padding: 16px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
 }
