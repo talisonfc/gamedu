@@ -9,7 +9,7 @@ var templateSucess = document.getElementById("template-sucess").textContent
 
 var view = {
     init: function(){
-        openPage("home")
+        openPage('game')
     }
 }
 
@@ -46,6 +46,9 @@ function openPage(page, data){
             body.innerHTML = templateSucess
             viewSucess.init(data)
             break
+        }
+        default: {
+            body.innerHTML = templateHome
         }
     }
 }
