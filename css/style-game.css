@@ -52,18 +52,22 @@ button{
 
 #controllers{
     position: absolute;
-    bottom: 20px;
+    bottom: 0px;
     width: 100%;
     text-align: center;
     background: rgba(255, 255, 255, 0.3);
 }
 
 #controllers button{
-    font-size: 2em;
+    /* font-size: 2em; */
     background: transparent;
-    border-radius: 2em;
-    margin: .5em;
+    /* border-radius: 2em; */
+    /* margin: .5em; */
     color: red;
+}
+
+#controllers button img{
+    width: 50px;
 }
 
 #btnUp{

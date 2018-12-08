@@ -57,19 +57,35 @@
 
         <div id="controllers">
             <div>
-                <button id="btnUp">up</button>
+                <button id="btnUp">
+                    <img src="./assets/controller/up.png" alt="">
+                </button>
             </div>
             <div>
-                <button id="btnLeft">left</button>
-                <button id="btnPlay">play</button>
-                <button id="btnRight">right</button>
+                <button id="btnLeft"><img src="./assets/controller/left.png" alt=""></button>
+                <button id="btnPlay"><img src="./assets/controller/enter.png" alt=""></button>
+                <button id="btnRight"><img src="./assets/controller/right.png" alt=""></button>
             </div>
             <div>
-                <button id="btnDown">down</button>
+                <button id="btnDown"><img src="./assets/controller/down.png" alt=""></button>
             </div>
         </div>
 
         <div id="grid"></div>
+    </script>
+
+    <!-- PAGE PLAY -->
+    <script type="text/template" id="template-play">
+        <div class="header">
+            <div><button onclick="openPage('game')" class="btn btn-light btn-lg btn-block">
+                <
+            </button></div>
+            <div class="title">Detalhe</div>
+        </div>
+
+        <div>
+            game inside here
+        </div>
     </script>
 
     <!-- PAGE DETALHE -->
@@ -194,6 +210,7 @@
     <script type="text/javascript" src="./model.js"></script>
     <script type="text/javascript" src="./mvc-home.ts"></script>
     <script type="text/javascript" src="./mvc-game.js"></script>
+    <script type="text/javascript" src="./mvc-play.js"></script>
     <script type="text/javascript" src="./mvc-detalhe.js"></script>
     <script type="text/javascript" src="./mvc-slide.js"></script>
     <script type="text/javascript" src="./mvc-apresentacao.js"></script>

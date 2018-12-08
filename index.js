@@ -6,10 +6,12 @@ var templateDetalhe = document.getElementById("template-detalhe").textContent
 var templateSlide = document.getElementById("template-slide").textContent
 var templateApresentacao = document.getElementById("template-apresentacao").textContent
 var templateSucess = document.getElementById("template-sucess").textContent
+var templatePlay = document.getElementById("template-play").textContent
+
 
 var view = {
     init: function(){
-        openPage('game')
+        openPage('play')
     }
 }
 
@@ -25,6 +27,11 @@ function openPage(page, data){
         case 'game':{
             body.innerHTML = templateGame
             viewGame.init()
+            break
+        }
+        case 'play':{
+            body.innerHTML = templatePlay
+            viewPlay.init()
             break
         }
         case 'detalhe':{
