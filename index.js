@@ -7,8 +7,7 @@ var templateSlide = document.getElementById("template-slide").textContent
 
 var view = {
     init: function(){
-        // body.innerHTML = templateHome
-        openPage("slide")
+        openPage()
     }
 }
 
@@ -30,6 +29,10 @@ function openPage(page, data){
             body.innerHTML = templateSlide
             viewSlide.init(data)
             break
+        }
+        default: {
+            body.innerHTML = templateHome
+
         }
     }
 }
