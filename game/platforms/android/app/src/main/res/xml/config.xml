@@ -5,6 +5,7 @@
         <param name="onload" value="true" />
     </feature>
     <name>Aedes</name>
+    <icon density="mdpi" height="57" platform="ios" src="res/icon.png" width="57" />
     <description>
         Game para ensinar sobre o Aedes
     </description>
