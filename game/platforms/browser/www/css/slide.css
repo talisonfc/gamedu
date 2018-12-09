@@ -22,3 +22,8 @@
 .dica{
     margin: 10px;
 }
+
+.btn-light{
+    background-color: white;
+    border-color: white;
+}

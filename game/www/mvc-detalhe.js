@@ -7,13 +7,14 @@ var controllerDetalhe = {
         })
         if(n==modelDetalhe.cenas.length){
             openPage('sucess', undefined)
+            modelGame.cena1.enabled = false
         }
     }
 }
 
 var viewDetalhe = {
     init: function(data){
-        console.log(data)
+        // console.log(data)
         var persona = document.getElementById("personak")
         next(persona, 0)
 
@@ -34,7 +35,7 @@ var viewDetalhe = {
         modelDetalhe.cenas.forEach(cena=>{
             if(cena.estado){
                 var divCena = document.getElementById(`cena-${cena.position}`)
-                divCena.style.background = '#ddd'
+                divCena.style.background = 'green'
             }
         })
         controllerDetalhe.verifySucess()

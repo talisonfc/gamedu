@@ -6,10 +6,12 @@ var templateDetalhe = document.getElementById("template-detalhe").textContent
 var templateSlide = document.getElementById("template-slide").textContent
 var templateApresentacao = document.getElementById("template-apresentacao").textContent
 var templateSucess = document.getElementById("template-sucess").textContent
+var templatePlay = document.getElementById("template-play").textContent
+
 
 var view = {
     init: function(){
-        openPage("home")
+        openPage('')
     }
 }
 
@@ -24,7 +26,12 @@ function openPage(page, data){
         }
         case 'game':{
             body.innerHTML = templateGame
-            viewGame.init()
+            viewGame.init(data)
+            break
+        }
+        case 'play':{
+            body.innerHTML = templatePlay
+            viewPlay.init()
             break
         }
         case 'detalhe':{
@@ -46,6 +53,9 @@ function openPage(page, data){
             body.innerHTML = templateSucess
             viewSucess.init(data)
             break
+        }
+        default: {
+            body.innerHTML = templateHome
         }
     }
 }

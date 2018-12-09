@@ -1,3 +1,9 @@
+var modelGame = {
+    cena1: {
+        enabled: 'true'
+    }
+}
+
 var modelDetalhe = {
     cenas: [
         {

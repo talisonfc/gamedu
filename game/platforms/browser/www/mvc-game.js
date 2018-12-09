@@ -113,16 +113,19 @@ function play() {
  * MVC
  */
 
-var modelGame = {
-
-}
-
 var controllerGame = {
-
+    changeDangerPlace: function (data) {
+        if (data != undefined && data.done != undefined && data.done) {
+            modelGame.cena1.enabled = false
+        }
+    }
 }
 
 var viewGame = {
-    init: function () {
+    init: function (data) {
+        console.log(data)
+        controllerGame.changeDangerPlace(data)
+
         persona = document.getElementById('persona')
 
         btnUp = document.getElementById('btnUp')
@@ -150,10 +153,10 @@ var viewGame = {
             city = [
                 [1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1],
                 [1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1],
-                [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                 [1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1],
                 [1, 0, 1, 2, 0, 1, 1, 0, 1, 1, 1],
-                [1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                 [1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1],
                 [1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1],
                 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -161,11 +164,11 @@ var viewGame = {
                 [0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1],
                 [1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1],
                 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-                [1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1],
-                [1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-                [1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1],
-                [1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1]
+                [1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1],
+                [1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1],
+                [1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1]
             ]
             grid = []
 
@@ -260,11 +263,36 @@ function initCity() {
             div.className = 'itemGrid'
             div.style.height = l + 'px'
             div.style.width = l + 'px'
-            if (city[i][j] != 0) {
-                div.style.background = grid[i][j].target == 0 ? `gray` : `white`
-            }
-            else {
-                div.style.background = `yellow`
+            // if (city[i][j] != 0) {
+            //     div.style.background = grid[i][j].target == 0 ? `gray` : `white`
+            // }
+            // else {
+            //     div.style.background = `yellow`
+            // }
+            if (city[i][j] == 2) {
+                // div.style.background = `gray`
+                var img = document.createElement('img')
+                img.src = './assets/danger.png'
+                img.style.width = '100%'
+                // div.appendChild(img)
+
+                // var osc = 0
+                // setInterval(() => {
+                //     if (osc % 2 == 0) {
+                //         div.remove(img)
+                //     }
+                //     else {
+                //         var img = document.createElement('img')
+                //         img.src = './assets/danger.png'
+                //         img.style.width = '100%'
+                //         div.appendChild(img)
+                //         div.appendChild(img)
+                //     }
+                //     osc++
+                // }, 200)
+                if (modelGame.cena1.enabled) {
+                    repeate(div, 'add')
+                }
             }
 
 
@@ -273,4 +301,22 @@ function initCity() {
         // console.log('div')
         gridView.appendChild(row)
     }
+}
+
+function repeate(pai, op) {
+    setTimeout(() => {
+        if (op == 'add') {
+            var img = document.createElement('img')
+            img.src = './assets/danger.png'
+            img.style.width = '100%'
+            pai.appendChild(img)
+            repeate(pai, 'rm')
+        }
+        else {
+            pai.removeChild(pai.children[0])
+            repeate(pai, 'add')
+        }
+
+        // console.log(pai.children)
+    }, 200)
 }
