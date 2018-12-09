@@ -11,7 +11,7 @@ var templatePlay = document.getElementById("template-play").textContent
 
 var view = {
     init: function(){
-        openPage('play')
+        openPage('game')
     }
 }
 

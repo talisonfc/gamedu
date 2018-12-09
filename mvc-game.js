@@ -267,7 +267,27 @@ function initCity() {
             //     div.style.background = `yellow`
             // }
             if (city[i][j] == 2) {
-                div.style.background = `gray`
+                // div.style.background = `gray`
+                var img = document.createElement('img')
+                img.src = './assets/danger.png'
+                img.style.width = '100%'
+                // div.appendChild(img)
+
+                // var osc = 0
+                // setInterval(() => {
+                //     if (osc % 2 == 0) {
+                //         div.remove(img)
+                //     }
+                //     else {
+                //         var img = document.createElement('img')
+                //         img.src = './assets/danger.png'
+                //         img.style.width = '100%'
+                //         div.appendChild(img)
+                //         div.appendChild(img)
+                //     }
+                //     osc++
+                // }, 200)
+                repeate(div, 'add')
             }
 
 
@@ -276,4 +296,21 @@ function initCity() {
         // console.log('div')
         gridView.appendChild(row)
     }
+}
+
+function repeate(pai, op) {
+    setTimeout(() => {
+        if (op == 'add') {
+            var img = document.createElement('img')
+            img.src = './assets/danger.png'
+            img.style.width = '100%'
+            pai.appendChild(img)
+            repeate(pai, 'rm')
+        }
+        else {
+            pai.removeChild(pai.children[0])
+            repeate(pai, 'add')
+        }
+        // console.log(pai.children)
+    }, 200)
 }

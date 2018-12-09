@@ -85,3 +85,16 @@ button{
 #btnRight{
     
 }
+
+.cenario{
+    position: absolute;
+    bottom: 30px;
+}
+
+.cenario img{
+    width: 100%;
+}
+
+.mark{
+    position: absolute;
+}
