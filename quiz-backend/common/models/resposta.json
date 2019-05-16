@@ -1,0 +1,43 @@
+{
+  "name": "resposta",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "respostaIndex": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "pergunta": {
+      "type": "belongsTo",
+      "model": "pergunta",
+      "foreignKey": "perguntaID",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "grupo": {
+      "type": "belongsTo",
+      "model": "grupo",
+      "foreignKey": "grupoID",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "usuario": {
+      "type": "belongsTo",
+      "model": "usuario",
+      "foreignKey": "userID",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

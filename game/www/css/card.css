@@ -1,0 +1,16 @@
+.card-informativo{
+    padding: 10px;
+    font-size: 1.2em;
+}
+
+.card-informativo-title{
+    font-weight: bold;
+    background: cornflowerblue;
+    color: white;
+}
+
+.position-button{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

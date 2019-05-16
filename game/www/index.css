@@ -33,3 +33,32 @@ html, body{
     border-radius: 5px;
     font-size: 1em;
 }
+
+.position-footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+}
+
+#enunciado{
+    font-size: 1em;
+    font-weight: bold;
+}
+
+#respostas{
+    font-size: 1em;
+}
+
+.resposta{
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.grupo{
+    border: 1px solid #ccc;
+    font-size: 1.2em;
+    font-weight: bold;
+}

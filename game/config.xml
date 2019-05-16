@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="fotonica.gamedu" version="1.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="fotonica.gamedu" version="1.0.7" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Aedes</name>
     <icon density="mdpi" height="57" platform="ios" src="res/icon.png" width="57" />
     <description>
         Game para ensinar sobre o Aedes
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
+    <author email="tfccomputation@gmail.com" href="http://cordova.io">
         Talison F. Costa
     </author>
     <content src="index.html" />
@@ -24,6 +24,7 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
+    <plugin name="cordova-plugin-device" spec="^2.0.2" />
     <engine name="android" spec="^7.1.2" />
     <engine name="browser" spec="^5.0.4" />
 </widget>

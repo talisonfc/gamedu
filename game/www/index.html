@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link type="text/css" rel="stylesheet" href="./index.css">
+    <link type="text/css" rel="stylesheet" href="./css/card.css">
     <!-- <link type="text/css" rel="stylesheet" href="./css/style.css"> -->
     <link type="text/css" rel="stylesheet" href="./resources/bootstrap-4.1.3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
@@ -28,33 +29,41 @@
             <div class="text-center game-name">
                 De olho no Aedes
             </div>
-            <button class="btn btn-primary btn-lg btn-block" onclick="openPage('game')">Iniciar</button>
-            <button class="btn btn-secondary btn-lg btn-block">Objetivos</button>
-            <button class="btn btn-danger btn-lg btn-block" onclick="openPage('apresentacao')">Informações</button>
-            <button class="btn btn-light btn-lg btn-block">Ajuda</button>
+
+            <button class="btn btn-ligth btn-lg btn-block" onclick="openPage('informativo')">Informativo</button>
+            <button class="btn btn-success btn-lg btn-block" onclick="openPage('apresentacao')">Apresentação</button>
+            <button class="btn btn-danger btn-lg btn-block" onclick="openPage('game')">GPS</button>
+            <button class="btn btn-warning btn-lg btn-block" onclick="openPage('quiz-grupos')">Quiz</button>
+            <!-- <button class="btn btn-light btn-lg btn-block">Ajuda</button> -->
         </div>
 
     </script>
 
+    <!-- PAGE INFORMATIVO -->
+    <script type="text/template" id="template-informativo">
+        <div class="header">
+            <div><button onclick="openPage('home')" class="btn btn-light btn-lg btn-block">
+                <
+            </button></div>
+            <div class="title">Informativo</div>
+        </div>
+        <div id='conteudo'></div>
+    </script>
+
     <!-- PAGE GAME -->
     <script type="text/template" id="template-game">
+        <div class="header" style="position: absolute; width: 100%; background: rgba(255,255,255,0.9); z-index: 10">
+            <div>
+                <button onclick="openPage('home')" class="btn btn-light btn-lg btn-block" style="background-color: transparent; border-color: transparent">
+                <
+                </button>
+            </div>
+            <div class="title">GPS</div>
+        </div>
+
         <div id="persona">
             <img src="" alt="">
         </div>
-
-        <!-- <div id="controllers">
-            <div>
-                <button id="btnUp"><i class="fas fa-arrow-circle-up"></i></button>
-            </div>
-            <div>
-                <button id="btnLeft"><i class="fas fa-arrow-circle-left"></i></button>
-                <button><i class="fas fa-play-circle"></i></button>
-                <button id="btnRight"><i class="fas fa-arrow-circle-right"></i></button>
-            </div>
-            <div>
-                <button id="btnDown"><i class="fas fa-arrow-circle-down"></i></button>
-            </div>
-        </div> -->
 
         <div id="controllers">
             <div>
@@ -84,6 +93,15 @@
             <div class="title">Detalhe</div>
         </div>
 
+        <div style='position: absolute; padding: 16px'>
+            <h3>Encontre os possíveis focos de Aedes Aegypti na imagem abaixo</h3>
+            <p>Toque na tela onde você supõe que existe um foco. Se estiver correto, 
+                aparecerá uma marca indicando o foco.
+            </p>
+
+            <div id='qtn-foco'></div>
+        </div>
+
         <div class="cenario" id="tough-area">
             <div>
                 <img src='./assets/cena2/all.png'/>
@@ -93,6 +111,34 @@
         <div id="mutation"></div>
     </script>
 
+    <!-- PAGE QUIZ Perguntas -->
+    <script type="text/template" id="template-quiz-perguntas">
+        <div class="header">
+            <div><button onclick="openPage('quiz-grupos')" class="btn btn-light btn-lg btn-block">
+                <
+            </button></div>
+            <div class="title">QUIZ Perguntas</div>
+        </div>
+
+        <div id="enunciado" style='padding: 10px'></div>
+        <div id="respostas" style='padding: 10px'></div>
+        <div class='' id="controllersQuiz"></div>
+    </script>
+
+    <!-- PAGE QUIZ Grupos -->
+    <script type="text/template" id="template-quiz-grupos">
+        <div class="header">
+            <div><button onclick="openPage('home')" class="btn btn-light btn-lg btn-block">
+                <
+            </button></div>
+            <div class="title">QUIZ Grupos</div>
+        </div>
+        <div id='device'></div>
+        <div class="container">
+            <div class="row" id="grupos">
+            </div>
+        </div>
+    </script>
 
     <script type="text/template" id="template-mark">
         <div class='mark'></div>
@@ -104,12 +150,12 @@
             <img id="personak" src="./assets/cena/persona.png"/>
         </div>
 
-        <div class="balao">
+        <div class="balao" style="text-align: justify">
             A cena mostrada apresenta alguns problemas. Clique na imagem para obter mais informações sobre
             esses problemas para resolve-los.
-            <div class="right">
+            <!-- <div class="right">
                 <button class="btn btn-light btn-lg btn-block" id="btnNextComment">next</button>
-            </div>
+            </div> -->
         </div>
 
         <div class="action">
@@ -216,8 +262,42 @@
         </div>
     </script>
 
+    <!--PAGE-SUCESS-CENA-1-->
+    <script type="text/template" id="template-sucess-cena-1">
+        <div class="header">
+            <div><button onclick="openPage('home')" class="btn btn-light btn-lg btn-block">
+                <
+            </button></div>
+            <div class="title">Parabéns</div>
+        </div>
+        
+        <div class="fala-persona">
+            <div id="speaktxt"></div>
+        </div>
+        <div class="persona">
+            <img id="personak" src="./assets/cena/persona.png"/>
+        </div>
+    </script>
+
+    <!--PAGE-SUCESS-CENA-2-->
+    <script type="text/template" id="template-sucess-cena-2">
+        <div class="header">
+            <div><button onclick="openPage('home')" class="btn btn-light btn-lg btn-block">
+                <
+            </button></div>
+            <div class="title">Parabéns</div>
+        </div>
+        
+        <div class="fala-persona">
+            <div id="speaktxt"></div>
+        </div>
+        <div class="persona">
+            <img id="personak" src="./assets/cena/persona.png"/>
+        </div>
+    </script>
 
     <script type="text/javascript" src="./model.js"></script>
+    <script type="text/javascript" src="./ajax.js"></script>
     <script type="text/javascript" src="./mvc-home.ts"></script>
     <script type="text/javascript" src="./mvc-game.js"></script>
     <script type="text/javascript" src="./mvc-play.js"></script>
@@ -225,6 +305,11 @@
     <script type="text/javascript" src="./mvc-slide.js"></script>
     <script type="text/javascript" src="./mvc-apresentacao.js"></script>
     <script type="text/javascript" src="./mvc-sucess.js"></script>
+    <script type="text/javascript" src="./mvc-sucess-cena1.js"></script>
+    <script type="text/javascript" src="./mvc-sucess-cena2.js"></script>
+    <script type="text/javascript" src="./mvc-quiz-respostas.js"></script>
+    <script type="text/javascript" src="./mvc-quiz-grupos.js"></script>
+    <script type="text/javascript" src="./mvc-informativo.js"></script>
     <script type="text/javascript" src="./index.js"></script>
 </body>
 

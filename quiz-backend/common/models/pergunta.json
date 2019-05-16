@@ -1,0 +1,33 @@
+{
+  "name": "pergunta",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "enunciado": {
+      "type": "string",
+      "required": true
+    },
+    "respostas": {
+      "type": [
+        "object"
+      ],
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "grupo": {
+      "type": "belongsTo",
+      "model": "grupo",
+      "foreignKey": "grupoID",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

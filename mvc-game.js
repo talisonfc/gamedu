@@ -104,9 +104,20 @@ function moveDown() {
 }
 
 function play() {
-    if (grid[y][x].status == 2) {
-        openPage('detalhe')
+    // console.log(`${x} - ${y}`)
+    if(y==modelGame.cena1.ponto.x && x==modelGame.cena1.ponto.y){
+        // console.log(`erro ${JSON.stringify(grid[y][x])}`)
+        if (grid[y][x].status == 2) {
+            openPage('detalhe')
+        }
     }
+    else if(y==modelGame.cena2.ponto.x && x==modelGame.cena2.ponto.y){
+        // console.log(`erro ${JSON.stringify(grid[y][x])}`)
+        if (grid[y][x].status==2){
+            openPage('play')
+        }
+    }
+    
 }
 
 /**
@@ -124,7 +135,7 @@ var controllerGame = {
 var viewGame = {
     init: function (data) {
         console.log(data)
-        controllerGame.changeDangerPlace(data)
+        // controllerGame.changeDangerPlace(data)
 
         persona = document.getElementById('persona')
 
@@ -160,7 +171,7 @@ var viewGame = {
                 [1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1],
                 [1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1],
                 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1],
+                [1, 1, 1, 1, 0, 2, 1, 0, 1, 0, 1],
                 [0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1],
                 [1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1],
                 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
@@ -290,7 +301,13 @@ function initCity() {
                 //     }
                 //     osc++
                 // }, 200)
-                if (modelGame.cena1.enabled) {
+                if (modelGame.cena1.enabled && modelGame.cena1.ponto.x==i && modelGame.cena1.ponto.y==j) {
+                    // console.log(`${i}-${j}`)
+                    repeate(div, 'add')
+                }
+
+                if (modelGame.cena2.enabled && modelGame.cena2.ponto.x==i && modelGame.cena2.ponto.y==j) {
+                    // console.log(`${i}-${j}`)
                     repeate(div, 'add')
                 }
             }

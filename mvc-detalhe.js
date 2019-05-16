@@ -6,8 +6,9 @@ var controllerDetalhe = {
             if(cena.estado) n++
         })
         if(n==modelDetalhe.cenas.length){
-            openPage('sucess', undefined)
+            modelGame.cena2.enabled = true
             modelGame.cena1.enabled = false
+            openPage('game', undefined)
         }
     }
 }

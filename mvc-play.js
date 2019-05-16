@@ -2,7 +2,13 @@
 
 
 var controllerPlay = {
-
+    countMarks: function(){
+        var qtn = 0
+        objs.forEach(mk=>{
+            if(mk.state) qtn++
+        })
+        return qtn
+    }
 }
 
 // all: {x: 1167, y: 837}
@@ -12,35 +18,40 @@ var objs = [
         ponto: {
             x: 293,
             y: 109
-        }
+        },
+        state: false
     },
     {
         name: 'obj-2.png',
         ponto: {
             x: 139,
             y: 573
-        }
+        },
+        state: false
     },
     {
         name: 'obj-3.png',
         ponto: {
             x: 298,
             y: 457
-        }
+        },
+        state: false
     },
     {
         name: 'obj-4.png',
         ponto: {
             x: 376,
             y: 501
-        }
+        },
+        state: false
     },
     {
         name: 'obj-5.png',
         ponto: {
             x: 626,
             y: 587
-        }
+        },
+        state: false
     },
     {
         name: 'obj-6.png',
@@ -84,38 +95,39 @@ var viewPlay = {
         var mutation = document.getElementById('mutation')
         mutation.style.width = screen.width
         mutation.style.height = screen.height
-        // var mark = document.getElementById("template-mark").textContent
-
-        // console.log(toughArea.children[0].children[0].style)
 
         toughArea.addEventListener('click', (event) => {
             var fe = screen.availWidth / 1167
-            // var mark = document.createElement('div')
-            // mark.style.position = 'absolute'
-            // mark.style.width = '10px'
-            // mark.style.height = '10px'
-            // mark.style.background = 'blue'
-            // mark.style.marginTop = `${event.clientY-52}px`
-            // mark.style.marginLeft = `${event.clientX}px`
-            // mutation.appendChild(mark)
-            // console.log(`${event.clientX} - ${event.clientY}`)
+
             marks.forEach((mk, i) => {
-                // console.log(distance(mk, {x: event.clientX, y: event.clientY-52}))
                 if (distance(mk, { x: event.clientX, y: event.clientY - 52 }) < 20) {
-                    console.log(objs[i])
-                    var divimg = document.createElement('div')
+                    // console.log(objs[i])
+                    objs[i].state = true
                     var img = document.createElement('img')
-                    divimg.style.position = 'absolute'
-                    img.src = './assets/cena2/' + objs[i].name
-                    divimg.appendChild(img)
-                    mutation.appendChild(divimg)
+                    img.src = './assets/markx.jpg'
+                    img.style.width = '100%'
 
-                    setTimeout(()=>{
-                        console.log(img.width)
-                        img.style.width = img.width*fe
-                    },100)
+                    var mark = document.createElement('div')
+                    mark.style.position = 'absolute'
+                    mark.style.width = '30px'
+                    mark.style.height = '30px'
+                    // mark.style.background = 'blue'
+                    mark.style.marginTop = `${event.clientY - 52}px`
+                    mark.style.marginLeft = `${event.clientX}px`
+                    mark.appendChild(img)
+                    mutation.appendChild(mark)
+
+                    var qtnFoco = document.getElementById('qtn-foco')
+                    if(controllerPlay.countMarks()==6){
+                        qtnFoco.innerHTML = `<h4>Você encontrou <b>${controllerPlay.countMarks()}</b> foco</h4>\
+                        <div style='color: blue'>Parabéns, você conseguiu encontrar todos os focos</div>`
+                        modelGame.cena2.enabled = false
+                        openPage(`sucess`)
+                    }
+                    else{
+                        qtnFoco.innerHTML = `<h4>Você encontrou <b>${controllerPlay.countMarks()}</b> foco</h4>`
+                    }
                     
-
                 }
             })
             // console.log(event)

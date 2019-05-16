@@ -1,6 +1,17 @@
 var modelGame = {
     cena1: {
-        enabled: 'true'
+        enabled: true,
+        ponto: {
+            x: 4,
+            y: 3
+        }
+    },
+    cena2: {
+        enabled: false,
+        ponto: {
+            x: 9,
+            y: 5
+        }
     }
 }
 

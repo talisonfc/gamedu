@@ -6,8 +6,9 @@ var controllerDetalhe = {
             if(cena.estado) n++
         })
         if(n==modelDetalhe.cenas.length){
-            openPage('sucess', undefined)
+            modelGame.cena2.enabled = true
             modelGame.cena1.enabled = false
+            openPage('sucess-cena-1', undefined)
         }
     }
 }
@@ -35,7 +36,12 @@ var viewDetalhe = {
         modelDetalhe.cenas.forEach(cena=>{
             if(cena.estado){
                 var divCena = document.getElementById(`cena-${cena.position}`)
-                divCena.style.background = 'green'
+                var imglike = document.createElement('img')
+                imglike.src = './assets/like.png'
+                imglike.style.width = '100px'
+                imglike.style.height = '100px'
+                divCena.appendChild(imglike)
+                // divCena.style.background = 'green'
             }
         })
         controllerDetalhe.verifySucess()
