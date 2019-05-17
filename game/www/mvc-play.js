@@ -104,7 +104,7 @@ var viewPlay = {
             img.style.width = '100%'
 
             marks.forEach((mk, i) => {
-                if (distance(mk, { x: event.clientX, y: event.clientY - 80 }) < 40) {
+                if (distance(mk, { x: event.clientX, y: event.clientY - 80 }) < 20 && !objs[i].state) {
                     objs[i].state = true
 
                     var mark = document.createElement('div')
