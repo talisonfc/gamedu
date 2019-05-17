@@ -4,6 +4,7 @@ import { Switch, Route, BrowserRouter } from 'react-router-dom'
 import Login from './pages/login/login'
 import Grupos from './pages/grupos/grupos'
 import Perguntas from './pages/perguntas/perguntas'
+import Respostas from './pages/respostas/respostas'
 import { withStyles } from '@material-ui/core/styles'
 
 const style = {
