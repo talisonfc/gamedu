@@ -32,7 +32,7 @@ function controllerPerguntas(state = {visibility: 'table-perguntas', groupID: ''
             return {visibility: 'table-perguntas', grupoID: action.groupID}
         }
         case 'LIST-RESPOSTAS': {
-            return {visibility: 'table-respostas'. grupoID: action.grupoID}
+            return {visibility: 'table-respostas', grupoID: action.grupoID}
         }
         default:{
             return state

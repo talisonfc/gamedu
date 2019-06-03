@@ -1,4 +1,4 @@
-const url = "http://ec2-18-191-247-51.us-east-2.compute.amazonaws.com:3100/api"
+const url = "http://ec2-3-18-220-95.us-east-2.compute.amazonaws.com:3100/api"
 // const url = "http://localhost:3100/api"
 
 function get(path,callback){
